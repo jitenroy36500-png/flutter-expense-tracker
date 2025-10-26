@@ -29,7 +29,6 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^7.3.0
   font_awesome_flutter: ^9.2.0
-  google_mobile_ads: ^0.13.5
   intl: ^0.18.0
   likk_picker: ^1.0.7+1
   package_info: ^2.0.2
