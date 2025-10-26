@@ -18,7 +18,7 @@ jobs:
     - name: Setup Java
       uses: actions/setup-java@v4
       with:
-        distribution: 'zulu'
+        distribution: 'temurin'
         java-version: '17'
 
     - name: Setup Flutter
@@ -26,10 +26,16 @@ jobs:
       with:
         flutter-version: '3.16.0'
 
+    - name: Fix Android Gradle
+      run: |
+        cd android
+        chmod +x gradlew
+        
     - name: Install dependencies
       run: flutter pub get
 
     - name: Build APK
       run: |
         flutter clean
-        flutter build apk --release
+        flutter pub get
+        flutter build apk --verbose
