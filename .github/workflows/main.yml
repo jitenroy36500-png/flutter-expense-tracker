@@ -36,7 +36,7 @@ jobs:
       run: flutter pub get
 
     - name: Run Flutter analyzer
-      run: flutter analyze || echo "Analysis has issues, but continuing build"
+      run: flutter analyze --no-fatal-infos || echo "Analysis has issues, but continuing build"
     - name: Run Flutter tests
       run: flutter test
 
